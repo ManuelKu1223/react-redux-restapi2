@@ -1,0 +1,87 @@
+.Login__panel {
+  height: 100vh; }
+  .Login__panel--left {
+    background-color: #F6F6F6; }
+    .Login__panel--left__content {
+      width: 80%;
+      margin: 20% auto 0; }
+      .Login__panel--left__content__header .title {
+        color: #000000;
+        font-size: 2.8rem; }
+      .Login__panel--left__content__header .description {
+        color: #646464;
+        font-size: 1.6rem;
+        line-height: 2.2rem; }
+      .Login__panel--left__content__external .btn-login--linkedin .icon--linkedin {
+        margin-right: 1rem; }
+      .Login__panel--left__content__external .btn-login--linkedin:hover .icon--linkedin path {
+        fill: #F50057; }
+      .Login__panel--left__content__separator {
+        border-bottom: 0.1rem solid #000000;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem; }
+        .Login__panel--left__content__separator .separator--text {
+          display: inline-block;
+          background-color: #F6F6F6;
+          width: 2.8rem;
+          height: 2.2rem;
+          border-radius: 50%;
+          position: relative;
+          top: 1.1rem;
+          cursor: default;
+          font-size: 1.6rem; }
+      .Login__panel--left__content__form {
+        text-align: center; }
+        .Login__panel--left__content__form .form__field {
+          margin-bottom: 2rem; }
+          .Login__panel--left__content__form .form__field__label {
+            color: #000000;
+            font-family: 'RobotoBold'; }
+          .Login__panel--left__content__form .form__field__input {
+            font-size: 1.4rem;
+            min-height: 1.9rem; }
+        .Login__panel--left__content__form .error {
+          font-family: 'RobotoMedium';
+          color: #FF2400;
+          font-size: 1.4rem;
+          margin-bottom: 1.5rem;
+          display: block; }
+        .Login__panel--left__content__form .btn-login > span {
+          text-transform: uppercase; }
+        .Login__panel--left__content__form .btn-signup {
+          margin-top: 2.5rem; }
+          .Login__panel--left__content__form .btn-signup > span {
+            text-transform: uppercase; }
+        .Login__panel--left__content__form .btn-remember-password {
+          font-family: 'RobotoMedium';
+          font-size: 1.2rem;
+          color: #F50057;
+          margin-top: 1.0rem;
+          display: inline-block;
+          cursor: pointer; }
+      @media (max-width: 960px) {
+        .Login__panel--left__content {
+          width: 90%;
+          margin: 10% auto 0; } }
+  .Login__panel--right {
+    background-color: #646464; }
+    .Login__panel--right__content {
+      width: 40%;
+      margin: 25% auto 0; }
+      .Login__panel--right__content__header .title {
+        color: #FFFFFF;
+        font-size: 2.8rem; }
+      .Login__panel--right__content__header .description {
+        color: #FFFFFF;
+        font-size: 1.6rem;
+        line-height: 2.2rem; }
+      .Login__panel--right__content__form .btn-signup {
+        margin-top: 2.5rem;
+        color: #FFFFFF;
+        border-color: #FFFFFF; }
+        .Login__panel--right__content__form .btn-signup:hover {
+          background-color: #FFFFFF;
+          color: #2196F3; }
+        .Login__panel--right__content__form .btn-signup > span {
+          text-transform: uppercase; }

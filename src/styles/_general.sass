@@ -1,0 +1,663 @@
+body
+    font-family: "Helvetica Neue", sans-serif
+    font-size: 0.9em
+    padding: 0
+    margin: 0
+a
+    color: $gray
+
+hr
+    margin: .5rem 0
+
+/* MainLogo */
+
+.MainLogo
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    max-width: 100%
+    max-height: 100%
+
+/* Tabs */
+
+.tabs li.is-active a
+    border-bottom: 3px solid $default
+    color: $default
+
+
+/* Modal */
+
+.modal
+    z-index: 99999
+
+.Button--Active.delete::after,
+.Button--Active.modal-close::after,
+.Button--Active.delete::before,
+.Button--Active.modal-close::before
+    background-color: $default
+
+.modal-close
+    max-height: 35px
+    max-width: 35px
+    border: 1px solid $white
+
+/* Menu */
+
+.is-menu
+.is-menu a
+    color: $white
+    transition: 0.3s
+
+.is-menu i
+    font-size: 1.5em !important
+
+.is-menu:hover, .is-menu.active
+    color: $menuIconTextColor
+
+/* Main Content Menu */
+
+.MainContentWrapper
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    overflow-x: hidden
+    overflow-y: auto
+    padding: 20px
+
+.MainContentWrapper.WithoutTopMenu
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: calc(100vh - 71px)
+    overflow-x: hidden
+    overflow-y: auto
+    padding: 20px
+
+.MainContentWrapper.WithoutBottomMenu
+    position: fixed
+    top: 60px
+    left: 0
+    width: 100%
+    height: calc(100vh - 61px)
+    overflow-x: hidden
+    overflow-y: auto
+    padding: 20px
+
+.MainContentWrapper.WithTopBottomMenu
+    position: fixed
+    top: 60px
+    left: 0
+    width: 100%
+    height: calc(100vh - 131px)
+    overflow-x: hidden
+    overflow-y: auto
+    padding: 20px
+
+.MainMenu
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 70px
+    overflow: hidden
+    padding: 15px
+    background-color: $default
+
+.MainTopBar
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 60px
+    overflow: hidden
+    padding: 15px 10px 10px 20px
+    background-color: $white
+    box-shadow: 0 1px 5px $gray
+    z-index: 999
+
+/* Slider */
+
+.slick-dotted.slick-slider
+    margin-top: 50px
+
+.Slider__Image
+    margin: auto
+
+.Slider__Text
+    margin: 50px 0
+    padding: 15px
+
+.slick-dots
+    bottom: -100px
+
+.slick-dots li button:before
+    font-size: 12px
+    color: $selectedSliderDotColor !important
+
+.ProfilePublishSlider.slick-dotted.slick-slider,
+.RankingSlider.slick-dotted.slick-slider
+    margin-top: 0
+
+.ProfilePublishSlider .slick-dots,
+.RankingSlider .slick-dots
+    bottom: -30px
+
+.ProfilePublishSlider .slick-dots li button:before,
+.RankingSlider .slick-dots li button:before
+    font-size: 12px
+    color: $black !important
+
+.ProfilePublishSlider .slick-slide img,
+.RankingSlider .slick-slide img
+    width: 100%
+
+.PremiosModalSlider .slick-dots
+    bottom: 15px
+
+
+/* Go Button */
+
+.Go__Button--Fixed
+    position: fixed
+    bottom: 15px
+    left: 0
+    right: 0
+    margin: auto
+    background-color: $default
+    height: 65px
+    width: 65px
+    border-radius: 100%
+    text-align: center
+    box-shadow: 0px 0px 25px #ffffff
+    border: 5px solid #ffffff
+
+.Go__Button--Fixed p
+    margin: auto
+    font-size: 20px
+    color: $white
+    top: 13px
+    position: relative
+
+/* Profile */
+
+.Rating__Marker
+    position: absolute
+    top: 10px
+    font-size: 1.5em
+    color: $default
+
+.Rating__Marker span
+    font-size: 10px
+    left: 5px
+    top: -10px
+    color: $disable
+    position: relative
+
+
+/* Ranking */
+
+.Increasing
+    color: #61DE83
+
+.Decreasing
+    color: #FF0A38
+
+.NoChange
+    color: #707070
+
+.Star--Olive
+    color: #C3CB09
+
+.Star--Gray
+    color: #707070
+
+.Star--DarkOlive
+    color: #897109
+
+
+/* --------------------- OLD ----------------- */
+
+
+
+.footer
+    position: relative
+    top: 0
+    text-align: center
+    background-color: $white !important
+    padding: 5px !important
+
+.MainApp
+    position: relative
+    left: 0
+    top: 0
+    min-height: 450px
+    height: auto
+    width: 100%
+    background: $white
+    color: $black
+    padding: 25px
+
+
+
+.Header__Text
+    font-size: 28px
+    color: #212128
+    margin: 5px 0 15px 0
+
+.Header
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.SubHeader__Text
+    font-size: 18px
+    color: #393943
+    margin: 5px 0
+
+.BackButton
+    margin: 10px 0 15px 0
+
+.BackButton__link
+    color: $black
+
+/* Login Form */
+
+.Google__Button
+    background-color: $google
+    color: $white
+
+.Facebook__Button
+    background-color: $facebook
+    color: $white
+
+.input:focus, .input.is-focused, .input:active, .input.is-active, .textarea:focus, .textarea.is-focused, .textarea:active, .textarea.is-active
+    border-color: $default
+
+.LoginForm
+    margin: 15px 0
+
+.Input--BorderBottom
+    border: none
+    border-color: transparent !important
+    border-bottom: 1px solid $lightGray !important
+
+.Input--ColoredBorder
+    border: 2px solid $blue
+
+.Input--Big
+    font-size: 1.4rem
+
+.Input--SemiRounded
+    border-radius: 10px
+
+.Input--FullWidth
+    width: 100%
+
+.Input--WidthEightyFive
+    width: 85%
+
+/* Forget Password */
+
+.newsletter
+    position: relative
+    width: 100%
+    height: auto
+
+    .text
+        position: absolute
+        left: 0
+        top: 0
+        width: 75%
+        min-height: 50px
+        height: auto
+
+    .toggle-container
+        position: absolute
+        right: 0
+        top: 0
+        width: 25%
+        min-height: 50px
+        height: auto
+
+
+/* Registration */
+
+.Buttom__WithImage
+    position: relative
+    top: -5px
+
+.Checkbox--TextAligned
+    padding-left: 20px
+    text-indent: -15px
+    line-height: 20px
+
+.Preference_Icon_Box
+    position: relative
+    margin: auto
+    height: 50px
+    width: 50px
+    border: 1px solid $gray
+    border-radius: 100%
+    background-color: #FFFFFF
+    transition: 0.3s
+
+.Big__Box
+    height: 60px
+    width: 60px
+    border-color: $white !important
+
+.Small__Box
+    height: 40px
+    width: 40px
+    border-color: $white !important
+
+.Preference_Icon_Box.disabled
+    background-color: $disable
+
+.Preference_Icon_Box:hover,
+.Preference_Icon_Box.selected
+    background-color: #8E8E93
+
+.Preference__Icon
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    color: #8E8E93
+    transition: 0.3s
+
+.Preference_Icon_Box:hover .Preference__Icon,
+.Preference_Icon_Box.selected .Preference__Icon
+    color: #FFFFFF
+
+.BG__Blue
+    background-color: $meritosBackgroundColor1
+    border-color: $white !important
+
+.BG__Olive
+    background-color: $meritosBackgroundColor2
+    border-color: $white !important
+
+.BG__Orange
+    background-color: $meritosBackgroundColor3
+    border-color: $white !important
+
+.BG__Yellow
+    background-color: $meritosBackgroundColor4
+    border-color: $white !important
+
+.BG__Disable
+    background-color: $disable
+    border-color: $white !important
+
+/* Feedback */
+
+.FeedbackSlider
+    min-height: 220px
+    height: auto
+    padding-bottom: 15px
+
+/* Car Select */
+
+.Car__Box
+    box-shadow: 0 2px 5px #ddd
+    padding: 10px
+    width: 100%
+
+
+/* Public Profile Car */
+
+.carSliderContainer
+    position: relative
+
+    .trash
+        position: absolute
+        top: 15px
+        right: 20px
+    .camera
+        position: absolute
+        bottom: 15px
+        right: 20px
+
+.CarSlider .slick-dots
+    bottom: 5px
+
+.CarSlider .slick-dots li button:before
+    color: $white !important
+
+
+.public-profile-image-section
+    position: absolute
+    top: -25px
+
+.public-profile-name-section
+    position: relative
+    top: -35px
+
+
+/* Chatting */
+
+.chatting_bg
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+    width: 100%
+    min-height: 250px
+    position: relative
+
+.chatting-button
+    position: absolute
+    bottom: 10%
+    left: 50%
+    transform: translateX(-50%)
+
+/* Private Profile */
+
+.PaddingMarginForLockIcon
+    padding-top: 10px
+    color: $gray
+
+/* Car Image Publish */
+
+.UploadImageContainer
+    align-items: center
+    display: flex
+    position: relative
+    width: 100%
+    height: 200px
+    overflow-x: auto
+    overflow-y: hidden
+    border: 1px solid $gray
+
+.UploadImageContainer .column
+    position: relative
+
+.UploadImageContainer .CloseButton
+    position: absolute
+    top: 5px
+    right: 3px
+
+/* See or Show car */
+
+.MainContentWrapper.SeeShowCar
+    position: fixed
+    top: 10px
+    left: 0
+    width: 100%
+    height: calc(100vh - 61px)
+    overflow-x: hidden
+    overflow-y: auto
+    padding: 0
+
+.Seecar
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+    width: 100%
+    min-height: 200px
+    position: relative
+
+.Showcar
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+    width: 100%
+    min-height: 200px
+    position: relative
+
+.OverlayHeader
+    position: absolute
+    top: 15px
+    left: 25px
+    width: 65%
+    color: $white
+
+/* Car List */
+
+.MainContentWrapper.CarList
+    position: fixed
+    top: 70px
+    left: 0
+    width: 100%
+    height: calc(100vh - 141px)
+    overflow-x: hidden
+    overflow-y: auto
+    padding: 20px
+
+.CarListNameWrapper
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 70px
+    overflow-x: auto
+    overflow-y: hidden
+    padding-top: 15px
+
+.OverlayImage
+    position: absolute
+    left: -40px
+    bottom: -40px
+    border: 1px solid $white
+
+.FindMapButton
+    position: fixed
+    right: 15px
+    bottom: 80px
+
+
+/* Car Dealer */
+
+.MainContentWrapper.CarDealerList
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: calc(100vh - 291px)
+    overflow-x: hidden
+    overflow-y: auto
+    padding: 20px
+
+.CarDealerListWrapper
+    position: fixed
+    bottom: 70px
+    left: 0
+    width: 100%
+    height: 220px
+    overflow-x: auto
+    overflow-y: hidden
+    padding: 5px
+
+.GotToList
+    position: fixed
+    left: 30px
+    top: 90px
+
+.OverlayDelarImage
+    position: absolute
+    left: -5px
+    top: -50px
+    border: 1px solid $white
+
+.OverlayDelarName
+    position: relative
+    top: -95px
+    left: 45px
+    width: calc(100% - 46px)
+
+/* Online User */
+
+.MainContentWrapper.UserOnline
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: calc(100vh - 71px)
+    overflow-x: hidden
+    overflow-y: auto
+    padding: 20px
+
+.ActiveUser
+    position: relative
+    right: -30px
+    top: 5px
+    color: $blue
+
+.MyCarPublishButton
+    position: fixed
+    bottom: 90px
+    left: 50%
+    transform: translateX(-50%)
+
+/* Active Test */
+
+.tab-content div.content
+    display: none
+
+.tab-content div.content.is-active
+    display: block
+
+/* Chatting */
+
+.TopHeader
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 70px
+    overflow: hidden
+
+.TopSubHeader
+    position: fixed
+    top: 10vh
+    left: 0
+    width: 100%
+    height: 45px
+    overflow: hidden
+
+
+
+.incoming
+    padding: 10px 5px 10px 30px
+    background: #7008fb
+    color: #FFFFFF
+    border-radius: 0 35px 20px 50px
+    margin-bottom: 10px
+    width: 85%
+    float: left
+    box-shadow: 0 0 10px #5e9dff
+
+.outgoing
+    padding: 10px 30px 10px 5px
+    background: #f7f7f7
+    color: #000000
+    border-radius: 20px 0 50px 35px
+    text-align: right
+    margin-bottom: 10px
+    width: 85%
+    float: right
+    box-shadow: 0 0 10px #87929b

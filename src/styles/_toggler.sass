@@ -1,0 +1,124 @@
+/*******************/
+/***** Toggler *****/
+/*******************/
+
+input[type="checkbox"].Toggler
+    position: absolute
+    opacity: 0
+
+/* Normal Track */
+
+input[type="checkbox"].ToggleSwitch + div
+    vertical-align: middle
+    width: 52px
+    height: 30px
+    border: 1px solid $toggleGray
+    border-radius: 999px
+    background-color: $toggleGray
+    -webkit-transition-duration: .4s
+    -webkit-transition-property: background-color, box-shadow
+    box-shadow: inset 0 0 0 0px $toggleGray
+    margin: 15px 1.2em 15px 2.5em
+
+/* Checked Track (Blue) */
+
+input[type="checkbox"].ToggleSwitch:checked + div
+    width: 50px
+    background-position: 0 0
+    background-color: $toggleSelectColor
+    border: 1px solid $toggleSelectColor
+    box-shadow: inset 0 0 0 10px $toggleSelectColor
+
+/* Normal Knob */
+
+input[type="checkbox"].ToggleSwitch + div > div
+    float: left
+    width: 26px
+    height: 26px
+    border-radius: inherit
+    background: $disable
+    -webkit-transition-timing-function: cubic-bezier(.54,1.85,.5,1)
+    -webkit-transition-duration: 0.4s
+    -webkit-transition-property: transform, background-color
+    -moz-transition-timing-function: cubic-bezier(.54,1.85,.5,1)
+    -moz-transition-duration: 0.4s
+    -moz-transition-property: transform, background-color
+    pointer-events: none
+    margin-top: 1px
+    margin-left: 1px
+    text-align: center
+    padding-top: 7px
+
+/* Checked Knob (Blue Style) */
+
+input[type="checkbox"].ToggleSwitch:checked + div > div
+    -webkit-transform: translate3d(20px, 0, 0)
+    -moz-transform: translate3d(20px, 0, 0)
+    background-color: $disable
+    text-align: center
+    padding-top: 6px
+
+input[type="checkbox"].ToggleSwitch + div > div i.fa-check
+    display: none
+
+input[type="checkbox"].ToggleSwitch:checked + div > div i.fa-check
+    display: block
+    color: $toggleSelectColor
+
+input[type="checkbox"].ToggleSwitch:checked + div > div i.fa-times
+    display: none
+
+input[type="checkbox"].ToggleSwitch + div > div i.fa-times
+    display: block
+    color: $toggleGray
+
+
+/* Radio Button */
+
+input[type='radio']:after 
+    width: 15px
+    height: 15px
+    border-radius: 15px
+    top: -2px
+    left: -1px
+    position: relative
+    content: ''
+    display: inline-block
+    visibility: visible
+    background-color: $white
+    border: 2px solid $white
+    outline: 1px solid $disable
+
+input[type='radio']:checked:after 
+    width: 15px
+    height: 15px
+    border-radius: 15px
+    top: -2px
+    left: -1px
+    position: relative
+    content: ''
+    display: inline-block
+    visibility: visible
+    background-color: $default
+    border: 2px solid $white
+    outline: 1px solid $disable
+
+
+/* Accordian */
+
+.accordian input[name="accordion-select"],
+.accordian .panel-block
+    display: none
+
+.accordian label.panel-heading 
+    cursor: pointer
+    display: block
+    background: $white
+
+.accordian #panel-1:checked ~ .panel > .body-1,
+.accordian #panel-2:checked ~ .panel > .body-2,
+.accordian #panel-3:checked ~ .panel > .body-3
+    display: flex
+
+.accordian .panel:not(:last-child)
+    margin-bottom: 0
