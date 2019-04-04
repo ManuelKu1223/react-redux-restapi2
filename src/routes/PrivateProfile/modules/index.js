@@ -1,22 +1,21 @@
 import initialState from '../../../store/globalState/initialState';
-
 import {
-  FETCH_ACCESS_INIT,
-  FETCH_ACCESS_SUCCESS,
-  FETCH_ACCESS_FAILURE,
+  GET_USER_INFO,
+  UPDATE_USER_INFO,
+  GET_USER_DATA,
+  UPDATE_EMAIL,
 } from './types';
 
-export default function accessReducer(state = initialState.access, action) {
+export default function accessReducer(state = initialState.session, action) {
   switch (action.type) {
-    case FETCH_ACCESS_INIT:
-    case FETCH_ACCESS_SUCCESS:
-      return {
-        error: '',
-      };
-    case FETCH_ACCESS_FAILURE:
-      return {
-        error: action.payload,
-      };
+    case GET_USER_INFO:
+      return { ...state, user: action.user };
+    case UPDATE_USER_INFO:
+      return { ...state, user: action.user };
+    case UPDATE_EMAIL:
+      return { ...state, user: action.user };
+    case GET_USER_DATA:
+      return { ...state, data: action.data };
     default:
       return state;
   }

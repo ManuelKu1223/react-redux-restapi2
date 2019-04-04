@@ -1,92 +1,121 @@
 import { sessionService } from 'redux-react-session';
-// import apiFetch from '../../../utils/apiFetch';
-import {
-  loadingAction,
-} from '../../../store/globalState/global';
+import { loadingAction } from 'store/globalState/global';
+import ENDPOINTS from '../../../constants/urls';
+import apiFetch from '../../../utils/apiFetch';
 
 import {
-  FETCH_ACCESS_INIT,
-  FETCH_ACCESS_SUCCESS,
-  FETCH_ACCESS_FAILURE,
+  GET_USER_INFO,
+  ADD_USER_INFO,
+  REMOVE_USER_INFO,
+  UPDATE_USER_INFO,
+  GET_USER_DATA,
+  UPDATE_EMAIL,
+  USER_LOGOUT,
 } from './types';
 
-export function fetchAccessInit() {
+export function getUserInfo(user) {
   return {
-    type: FETCH_ACCESS_INIT,
+    type: GET_USER_INFO,
+    user,
   };
 }
 
-export function fetchAccessSuccess() {
+export function addUserInfo() {
   return {
-    type: FETCH_ACCESS_SUCCESS,
+    type: ADD_USER_INFO,
   };
 }
 
-export function fetchAccessFailure(error) {
+export function removeUserInfo() {
   return {
-    type: FETCH_ACCESS_FAILURE,
-    payload: error,
+    type: REMOVE_USER_INFO,
   };
 }
 
-export default function fetchAccessAction(event, { email }) {
-  event.preventDefault();
+export function updateUserInfo(data) {
+  return {
+    type: UPDATE_USER_INFO,
+    data,
+  };
+}
 
-  /* const loginForm = {
-    email,
-    password,
-  }; */
+export function getUserData(data) {
+  return {
+    type: GET_USER_DATA,
+    data,
+  };
+}
 
+export function updateUserEmail(user) {
+  return {
+    type: UPDATE_EMAIL,
+    user,
+  };
+}
+
+export function logOutAction() {
+  return {
+    type: USER_LOGOUT,
+  };
+}
+
+
+export function getUser() {
+  return (dispatch) => {
+    return apiFetch(
+      'GET',
+      ENDPOINTS.userSession,
+    ).then((response) => {
+      dispatch(getUserInfo(response));
+    }).catch(() => {
+    });
+  };
+}
+
+export function getData() {
+  return (dispatch) => {
+    return apiFetch(
+      'GET',
+      ENDPOINTS.getUsersData,
+    ).then((res) => {
+      dispatch(getUserData(res));
+    }).catch(() => {
+    });
+  };
+}
+
+export function updateUser(values) {
+  return apiFetch(
+    'PUT',
+    ENDPOINTS.updateUser,
+    values,
+  );
+}
+
+export function logOut() {
   return (dispatch) => {
     dispatch(loadingAction(true));
-    dispatch(fetchAccessInit());
-
-    return new Promise((resolve) => {
-      sessionService.saveSession({ token: '123456789' })
-        .then(() => {
-          sessionService.saveUser({
-            email,
-          }).then(() => {
-            dispatch(fetchAccessSuccess());
-            dispatch(loadingAction(false));
-            resolve(true);
-          });
-        });
+    return apiFetch(
+      'POST',
+      ENDPOINTS.logout,
+    ).then(() => {
+      sessionService.deleteSession();
+      sessionService.deleteUser();
+      dispatch(logOutAction());
+      dispatch(loadingAction(false));
     });
-    /* return apiFetch(
-        'POST',
-        {endPoint:'login'},
-        loginForm
-      )
-      .then((res) => {
+  };
+}
 
-        if (typeof res === 'string') {
-          dispatch(fetchAccessFailure('error'));
-          dispatch(loadingAction(false));
-          return;
-        }
-
-        const { success } = res;
-
-        if (success) {
-          const { info : { session_code: token } } = res;
-
-          sessionService.saveSession({ token })
-            .then(() => {
-              sessionService.saveUser(res.info)
-                .then(() => {
-                  dispatch(fetchAccessSuccess());
-                  dispatch(loadingAction(false));
-                })
-            })
-        } else {
-          dispatch(fetchAccessFailure(res.info));
-          dispatch(loadingAction(false));
-        }
-      })
-      .catch((err) => {
-        dispatch(fetchAccessFailure(err));
-        dispatch(loadingAction(false));
-      }); */
+export function updateEmail(values) {
+  return (dispatch) => {
+    return apiFetch(
+      'POST',
+      ENDPOINTS.updateEmail,
+      values,
+    ).then((res) => {
+      dispatch(updateUserEmail(res));
+    }).catch(() => {
+    });
   };
 }
